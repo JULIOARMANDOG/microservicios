@@ -1,0 +1,111 @@
+eureka:
+ 
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:8761/eureka/"
+    shouldRegisterWithEureka: true
+    shouldFetchRegistry: false
+    health:
+      enabled: true
+      checkEnabled: true
+    validateCertificates: false
+  instance:
+    appName: "general"
+    virtualHostName: "general"
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 15
+    instanceEnabledOnInit: true
+    status-page-url-path: "/swagger-ui.html"
+    home-page-url-path: "/swagger-ui.html"
+    
+    preferIpAddress: true
+    
+  
+mvc:
+   pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+      
+datasource:
+       url: jdbc:mysql://localhost:3306/db_general?useMysqlMetadata=true&serverTimezone=America/Guayaquil&allowPublicKeyRetrieval=false
+       username: root
+       password: Jagm@2022
+       driverClassName: com.mysql.cj.jdbc.Driver
+       maximumPoolSize: 2      
+      
+     
+      
+spring:
+      jpa:
+        show-sql: true
+        database: MYSQL
+        hibernate:
+               ddl-auto: update
+               dialect: 
+                   storage_engine: innodb
+        
+
+                  
+        
+                
+
+
+
+CYPHER:
+  secret_key: Opinno_12345
+  salt: Opinno_12345
+
+
+
+
+
+
+jwt:
+  secret: javainuse
+  expirationDateInMs: 18000000
+
+
+
+oneSignal:
+  urls:
+    notificationsUrl: "https://localhost/ratasura"
+    devicesUrl: "https://localhost/ratasura/api/v1/rata"
+    segmentsUrl: "https://localhost/ratasura/api/v1/rata"
+  accountId: "6xxx6784521-cdret7dsfsdfasf-1234567894"
+  authToken: "ZDNjY2YzYzUtMTFiNy0"
+  emailFromAddress: "noreply@develo.com"
+  emailFromName: "Rata sura"
+
+errors:
+   codnotexistotp: "-4733"
+   messageotpnotexist: "No existe pin para este mail"
+   codotpcaducate: "-7813"
+   messageotpcaducate: "El pin ha caducado"
+   codinvalidotp: "-4214"
+   messageinvalidotp: "Pin invalido"
+   codvalidotp: "0"
+   messagevalidotp: "Pin invalido"
+   codexistvalidationotp: "-782784"
+   messageexistvalidationotp: "Existe una validacion de OTP activa , favor verificar la otp enviada al mail"
+   coderrorereateotp: "-374"
+   messageerrorereateotp: "Ocurrió un error en la generación del token"
+   codsendotpmail: "0"
+   messagesendotpmail: "Se ha enviado una OTP al mail : "
+   coderrorpinlogin: "-741"
+   messageerrorpinlogin: "Pin inválido"
+   codpinvalidateok: "0"
+   messagevalidatepinok: "Validación de pin exitosa"
+   
+aws:
+  service:
+       endPoint: http://localhost:4566/
+  access:
+       key:
+         id: RATA_123
+  secret:
+      access:
+          key: RATA_123
+  s3:
+    region: us-west-1   
+
+
+
