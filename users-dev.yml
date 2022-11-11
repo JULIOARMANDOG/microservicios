@@ -51,8 +51,8 @@ spring:
 
 
 CYPHER:
-  secret_key: Opinno_12345
-  salt: Opinno_12345
+  secret_key: Rata_12345
+  salt: Rata_12345
 
 
 
